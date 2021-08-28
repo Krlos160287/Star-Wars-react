@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 
-export const Character = props => {
+export const Vehicle = props => {
 	const { store, actions } = useContext(Context);
 	return (
 		<div className="container">
@@ -29,19 +29,19 @@ export const Character = props => {
 					<h3>Name</h3> <br /> <h6>{props.location.state.name}</h6>
 				</div>
 				<div className="text">
-					<h3>Birth Year</h3> <br /> <h6>{props.location.state.birth_year}</h6>
+					<h3>Model</h3> <br /> <h6>{props.location.state.model}</h6>
 				</div>
 				<div className="text">
-					<h3>Eye Color</h3> <br /> <h6>{props.location.state.eye_color}</h6>
+					<h3>Crew</h3> <br /> <h6>{props.location.state.crew}</h6>
 				</div>
 				<div className="text">
-					<h3>Gender</h3> <br /> <h6>{props.location.state.gender}</h6>
+					<h3>Length</h3> <br /> <h6>{props.location.state.length}</h6>
 				</div>
 				<div className="text">
-					<h3>Hair Color</h3> <br /> <h6>{props.location.state.hair_color}</h6>
+					<h3>Passengers</h3> <br /> <h6>{props.location.state.passengers}</h6>
 				</div>
 				<div className="text">
-					<h3>Height</h3> <br /> <h6>{props.location.state.height}</h6>
+					<h3>Cost in credits</h3> <br /> <h6>{props.location.state.cost_in_credits}</h6>
 				</div>
 			</div>
 			<br />
@@ -49,6 +49,6 @@ export const Character = props => {
 	);
 };
 
-Character.propTypes = {
+Vehicle.propTypes = {
 	location: PropTypes.json
 };

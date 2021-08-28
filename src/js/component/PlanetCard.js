@@ -18,11 +18,10 @@ export const PlanetCard = props => {
 				<div className="card-body">
 					<h5 className="card-title"> {props.planet.name}</h5>
 					<p className="card-text"> Terrain: {props.planet.terrain}</p>
-					<p className="card-text"> Climate: {props.planet.climate}</p>
 					<p className="card-text"> Population: {props.planet.population}</p>
-					<a href="#" className="btn btn-primary">
-						See more
-					</a>
+					<Link to={{ pathname: `/Planet/${props.planet.name}`, state: props.planet }}>
+						<button className="btn btn-primary">See more</button>
+					</Link>
 					{store.favorites.length > 0 && store.favorites.includes(props.planet) ? (
 						<button style={{ float: "right" }}>
 							<a href="#" className="btn btn-warning" style={{ width: "50px" }}>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
@@ -21,7 +21,7 @@ export const CharacterCard = props => {
 					<p className="card-text"> Gender: {props.character.gender}</p>
 					<p className="card-text"> Hair-color: {props.character.hair_color}</p>
 					<p className="card-text"> Eye-color: {props.character.eye_color}</p>
-					<Link to={"/Character/:uid/"}>
+					<Link to={{ pathname: `/Character/${props.character.name}`, state: props.character }}>
 						<button className="btn btn-primary">See more</button>
 					</Link>
 					{store.favorites.length > 0 && store.favorites.includes(props.character) ? (

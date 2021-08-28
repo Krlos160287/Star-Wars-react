@@ -20,9 +20,9 @@ export const VehicleCard = props => {
 					<p className="card-text"> Class: {props.vehicle.vehicle_class}</p>
 					<p className="card-text"> Cost in credits: {props.vehicle.cost_in_credits}</p>
 					<p className="card-text"> Passengers: {props.vehicle.passengers}</p>
-					<a href="#" className="btn btn-primary">
-						See more
-					</a>
+					<Link to={{ pathname: `/Vehicle/${props.vehicle.name}`, state: props.vehicle }}>
+						<button className="btn btn-primary">See more</button>
+					</Link>
 					{store.favorites.length > 0 && store.favorites.includes(props.vehicle) ? (
 						<button style={{ float: "right" }}>
 							<a href="#" className="btn btn-warning" style={{ width: "50px" }}>
